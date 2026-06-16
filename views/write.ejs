@@ -3,27 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>지원 이력 등록</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+    body { font-family: 'Noto Sans KR', sans-serif; background-color: #f4f7f6; margin: 0; padding: 40px; display: flex; justify-content: center; }
+    .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 100%; max-width: 450px; }
+    h2 { font-size: 22px; margin-top: 0; margin-bottom: 24px; color: #2c3e50; text-align: center; }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 8px; color: #34495e; }
+    input, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: inherit; font-size: 14px; transition: 0.2s; }
+    input:focus, select:focus { outline: none; border-color: #007bff; box-shadow: 0 0 0 3px rgba(0,123,255,0.1); }
+    .btn-submit { width: 100%; background-color: #28a745; color: white; border: none; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.2s; }
+    .btn-submit:hover { background-color: #218838; transform: translateY(-2px); }
+    .btn-cancel { display: block; text-align: center; margin-top: 20px; color: #95a5a6; text-decoration: none; font-size: 14px; transition: 0.2s; }
+    .btn-cancel:hover { color: #333; text-decoration: underline; }
+  </style>
 </head>
 <body>
-  <h2>새로운 지원 이력 등록</h2>
-  <form action="/write" method="POST">
-    <p>
-      <input type="text" name="company" placeholder="지원한 기업/기관명 (예: 네이버, 00재단)" required style="width: 300px;">
-    </p>
-    <p>
-      <input type="text" name="role" placeholder="직무 또는 프로그램명 (예: 백엔드 인턴, 현장실습)" required style="width: 300px;">
-    </p>
-    <p>
-      <select name="status" style="width: 308px; height: 25px;">
-        <option value="서류 심사중">서류 심사중</option>
-        <option value="면접 대기">면접 대기</option>
-        <option value="최종 합격">최종 합격 🎉</option>
-        <option value="탈락">탈락 🥲</option>
-      </select>
-    </p>
-    <button type="submit">등록하기</button>
-  </form>
-  <br>
-  <a href="/">목록으로 돌아가기</a>
+  <div class="container">
+    <h2>새로운 지원 이력 등록 📝</h2>
+    <form action="/write" method="POST">
+      <div class="form-group">
+        <label>지원한 기업/기관명</label>
+        <input type="text" name="company" placeholder="예: 스타트업 서킷 프랙티스" required>
+      </div>
+      <div class="form-group">
+        <label>직무 또는 프로그램명</label>
+        <input type="text" name="role" placeholder="예: 백엔드 개발, 실무 연수" required>
+      </div>
+      <div class="form-group">
+        <label>현재 상태</label>
+        <select name="status">
+          <option value="서류 심사중">서류 심사중</option>
+          <option value="면접 대기">면접 대기</option>
+          <option value="최종 합격 🎉">최종 합격 🎉</option>
+          <option value="탈락 🥲">탈락 🥲</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-submit">등록하기</button>
+      <a href="/" class="btn-cancel">목록으로 돌아가기</a>
+    </form>
+  </div>
 </body>
 </html>
