@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>지원 이력 등록</title>
+</head>
+<body>
+  <h2>새로운 지원 이력 등록</h2>
+  <form action="/write" method="POST">
+    <p>
+      <input type="text" name="company" placeholder="지원한 기업/기관명 (예: 네이버, 00재단)" required style="width: 300px;">
+    </p>
+    <p>
+      <input type="text" name="role" placeholder="직무 또는 프로그램명 (예: 백엔드 인턴, 현장실습)" required style="width: 300px;">
+    </p>
+    <p>
+      <select name="status" style="width: 308px; height: 25px;">
+        <option value="서류 심사중">서류 심사중</option>
+        <option value="면접 대기">면접 대기</option>
+        <option value="최종 합격">최종 합격 🎉</option>
+        <option value="탈락">탈락 🥲</option>
+      </select>
+    </p>
+    <button type="submit">등록하기</button>
+  </form>
+  <br>
+  <a href="/">목록으로 돌아가기</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>지원 이력 관리</title>
+</head>
+<body>
+  <h1>💼 나의 실무/대외활동 지원 현황</h1>
+  <a href="/write">새로운 지원 이력 추가하기</a>
+  <hr>
+  <ul>
+    <% apps.forEach(app => { %>
+      <li>
+        <strong><%= app.company %></strong> (<%= app.role %>) 
+        - 현재 상태: <span style="color: blue;"><%= app.status %></span>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
